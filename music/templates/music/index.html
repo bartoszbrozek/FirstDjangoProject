@@ -5,11 +5,12 @@
     <title>TITLE YOU POOR POORLY POOR</title>
 </head>
 <body>
+<h2>HERE ARE ALL MY ALBUMSSSS YESSSSSSSSSSS</h2>
 {% if all_albums %}
     <ul>
         {% for album in all_albums %}
         <li>
-            <a href="/music/{{ album.id }}/">{{ album.album_title }}</a>
+            <a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a>
         </li>
         {% endfor %}
     </ul>
