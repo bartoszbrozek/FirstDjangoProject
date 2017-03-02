@@ -24,8 +24,9 @@ def favorite(request, album_id):
     except (KeyError, Exception):
         return render(request, 'music/detail.html', {
             'album': album,
-            'error_message': "YOu DUMPY DUMB. IT IS NOT A VALID SONG ID... whatever."
+            'error_message': "YOu DUMPY DUMB. WHat ARE U TRYIN TO DO WITH IT... whatever."
         })
     else:
         selected_song.is_favorite = True
         selected_song.save()
+        return render(request, 'music/detail.html', {'album': album})
