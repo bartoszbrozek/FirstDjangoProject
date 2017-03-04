@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.contrib.auth.views import logout, login
 from . import views
 
 app_name = 'music'
@@ -9,6 +10,12 @@ urlpatterns = [
 
     # /register/
     url(r'^register/$', views.UserFormView.as_view(), name='register'),
+
+    # /login/
+    url(r'^login/$', login, name='login'),
+
+    # /logout/
+    url(r'^logout/$', logout, name='logout'),
 
     # /music/982/
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
