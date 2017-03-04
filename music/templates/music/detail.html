@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>THIS IS MUSICCCCCCCCC ARHGHRTHGH</title>
-</head>
-<body>
-{% if error_message %}
-<p><strong>{{ error_message }}</strong></p>
-{% endif %}
+{% extends 'music/base.html' %}
+{% block title %}Album details... {% endblock %}
+{% block body %}
+
 <h1>Album title: {{ album.album_title }}</h1>
 <h2>Artist: {{ album.artist }}</h2>
 <img src="{{ album.album_logo }}">
@@ -28,5 +22,5 @@
     </ul>
     <input type="submit" value="FAVORITE">
 </form>
-</body>
-</html>
+
+{% endblock %}}
